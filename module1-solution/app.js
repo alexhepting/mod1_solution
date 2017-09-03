@@ -23,14 +23,13 @@ function LunchCheckController($scope){
   
 
   $scope.check = function () {
-   
+   var items = splitString($scope.text, comma); 
    if ($scope.text == "")
    {
     $scope.message = "Please enter data first";
    }   
-   var items = splitString($scope.text, comma);
 
-   if (items>=3) 
+   else if (items<=3) 
    {
     $scope.message = "Enjoy!";
    }   
