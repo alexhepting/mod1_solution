@@ -28,12 +28,11 @@ function LunchCheckController($scope){
    {
     $scope.message = "Please enter data first";
    }   
-   else if (items>=3) 
+   else if (items<=3) 
    {
     $scope.message = "Enjoy!";
-   }
-   
-   else 
+   }   
+   else  
    {
     $scope.message = "Too much!";
    }
