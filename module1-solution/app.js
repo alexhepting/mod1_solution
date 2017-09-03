@@ -10,7 +10,7 @@ function LunchCheckController($scope){
   $scope.text = "";
   $scope.message = "";
   $scope.color = "";
-  $scope.items = "";  
+  $scope.items = 0;  
   var comma = ',';
   
   function splitString(stringToSplit, separator)
