@@ -15,6 +15,11 @@ function LunchCheckController($scope){
   function splitString(stringToSplit, separator)
   {
    var arrayOfStrings = stringToSplit.split(separator);
+   if(arrayOfStrings.includes(undefined))
+   {
+    arrayOfStrings = arrayOfStrings.filter(function(e){return e});
+    $scope.message+= " I don't consider empty items towards count ";
+   }
    
    return arrayOfStrings.length
   };
