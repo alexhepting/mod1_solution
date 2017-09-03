@@ -20,7 +20,7 @@ function LunchCheckController($scope){
   };
   
 
-  var items = splitString($scope.text, comma)
+  var items = splitString($scope.text, comma);
 
   $scope.check = function () {
    
@@ -33,7 +33,7 @@ function LunchCheckController($scope){
     $scope.message = "Enjoy!";
    }
    
-   if (items>3)
+   else 
    {
     $scope.message = "Too much!";
    }
