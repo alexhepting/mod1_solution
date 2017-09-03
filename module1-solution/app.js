@@ -9,13 +9,18 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope){
   $scope.text = "";
   $scope.message = "";
-  $scope.color = "";  
+  $scope.color = "";
+  $scope.items = "";  
   var comma = ',';
   
   function splitString(stringToSplit, separator)
   {
    var arrayOfStrings = stringToSplit.split(separator);
    
+   arrayOfStrings = arrayOfStrings.filter(function(e){return e});
+   
+   $scope.items = arrayOfStrings.length;
+
    return arrayOfStrings.length
   };
   
@@ -24,7 +29,7 @@ function LunchCheckController($scope){
 
   $scope.check = function () {
    var items = splitString($scope.text, comma); 
-   if ($scope.text == "")
+   if (items == 0)
    {
     $scope.message = "Please enter data first";
     $scope.color = "red";
